@@ -19,10 +19,33 @@ $(document).ready(function(){
   				$(this).css('left', '520px');
   			});
   	})
+  	.mousedown(function() {
+	    playHadouken();
+	    $('.ryu-ready').hide();
+  		$('.ryu-throwing').show();
+  		$('.hadouken-hulk-ryu').finish().show().animate(
+  			{'right': '1020px'},
+  			500,
+  			function() {
+  				$(this).hide();
+  				$(this).css('right', '520px');
+  			});
+  	})
 	.mouseup(function() {
 	    $('.ryu-throwing').hide();
   		$('.ryu-ready').show();
-	});
+	})
+ 	$(document).keydown(function(e) {
+    if (e.keyCode == 88) {
+      $('.ryu-ready').hide();
+      $('.ryu-cool').show();
+    	}   
+	}).keyup(function(e) {
+    if (e.keyCode == 88) {
+      $('.ryu-cool').hide();
+      $('.ryu-ready').show();
+    	}
+	})
 });
 
 function playHadouken () {
